@@ -1,0 +1,87 @@
+package com.testiniumBank.creator;
+
+import com.testiniumBank.client.Client;
+import com.testiniumBank.client.CorporateClient;
+import com.testiniumBank.client.IndividualClient;
+
+import java.util.HashMap;
+import java.util.Map;
+
+public class ClientCreator {
+    public static Map<String , Object> clients(){
+        Client client=new Client();
+        CorporateClient corporateClient1 = new CorporateClient();
+        corporateClient1.setTcNumber(11111111111L);
+        corporateClient1.setNameAndSurname("Ahmet Ahmet");
+        corporateClient1.setCompany("Testinium");
+        corporateClient1.setAccountBalance(1111);
+        corporateClient1.setBankClientNumber("1000");
+        CorporateClient corporateClient2 = new CorporateClient();
+        corporateClient2.setTcNumber(22222222222L);
+        corporateClient2.setNameAndSurname("Mehmet Mehmet");
+        corporateClient2.setCompany("Testinium");
+        corporateClient2.setAccountBalance(1111);
+        corporateClient2.setBankClientNumber("1001");
+        CorporateClient corporateClient3 = new CorporateClient();
+        corporateClient3.setTcNumber(33333333333L);
+        corporateClient3.setNameAndSurname("Ayşe Ayşe");
+        corporateClient3.setCompany("Testinium");
+        corporateClient3.setAccountBalance(1111);
+        corporateClient3.setBankClientNumber("1002");
+        CorporateClient corporateClient4 = new CorporateClient();
+        corporateClient4.setTcNumber(44444444444L);
+        corporateClient4.setNameAndSurname("Fatma Fatma");
+        corporateClient4.setCompany("Testinium");
+        corporateClient4.setAccountBalance(1111);
+        corporateClient4.setBankClientNumber("1003");
+        CorporateClient corporateClient5 = new CorporateClient();
+        corporateClient5.setTcNumber(55555555555L);
+        corporateClient5.setNameAndSurname("Hüseyin Hüseyin");
+        corporateClient5.setCompany("Testinium");
+        corporateClient5.setAccountBalance(1111);
+        corporateClient5.setBankClientNumber("1004");
+        Map<String,Object> clients=new HashMap<>();
+        clients.put(corporateClient1.getBankClientNumber(),corporateClient1);
+        clients.put(corporateClient2.getBankClientNumber(),corporateClient2);
+        clients.put(corporateClient3.getBankClientNumber(),corporateClient3);
+        clients.put(corporateClient4.getBankClientNumber(),corporateClient4);
+        clients.put(corporateClient5.getBankClientNumber(),corporateClient5);
+        IndividualClient individualClient1 = new IndividualClient();
+        individualClient1.setTcNumber(66666666666L);
+        individualClient1.setNameAndSurname("Umut Umut");
+        individualClient1.setHomeAddress("Bursa");
+        individualClient1.setAccountBalance(1111);
+        individualClient1.setBankClientNumber("1005");
+        IndividualClient individualClient2 = new IndividualClient();
+        individualClient2.setTcNumber(77777777777L);
+        individualClient2.setNameAndSurname("Can Can");
+        individualClient2.setHomeAddress("İzmir");
+        individualClient2.setAccountBalance(1111);
+        individualClient2.setBankClientNumber("1006");
+        IndividualClient individualClient3 = new IndividualClient();
+        individualClient3.setTcNumber(88888888888L);
+        individualClient3.setNameAndSurname("Selim Selim");
+        individualClient3.setHomeAddress("Ankara");
+        individualClient3.setAccountBalance(1111);
+        individualClient3.setBankClientNumber("1007");
+        IndividualClient individualClient4 = new IndividualClient();
+        individualClient4.setTcNumber(99999999999L);
+        individualClient4.setNameAndSurname("Selen Selen");
+        individualClient4.setHomeAddress("Manisa");
+        individualClient4.setAccountBalance(1111);
+        individualClient4.setBankClientNumber("1008");
+        IndividualClient individualClient5 = new IndividualClient();
+        individualClient5.setTcNumber(10000000000L);
+        individualClient5.setNameAndSurname("Kasım Kasım");
+        individualClient5.setHomeAddress("İstanbul");
+        individualClient5.setAccountBalance(1111);
+        individualClient5.setBankClientNumber("1009");
+        clients.put(individualClient1.getBankClientNumber(), individualClient1);
+        clients.put(individualClient2.getBankClientNumber(), individualClient2);
+        clients.put(individualClient3.getBankClientNumber(), individualClient3);
+        clients.put(individualClient4.getBankClientNumber(), individualClient4);
+        clients.put(individualClient5.getBankClientNumber(), individualClient5);
+        client.setClients(clients);
+        return client.getClients();
+    }
+}
