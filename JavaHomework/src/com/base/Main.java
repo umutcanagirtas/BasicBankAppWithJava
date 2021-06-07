@@ -18,6 +18,7 @@ public class Main {
         System.out.println("İşlem Yapmak İstediğiniz Hesap Numarasını Giriniz");
         Scanner inputBankAccount = new Scanner(System.in);
         String clientType = "";
+        int count=ClientCreator.clients().size();
         String bankAccountClient = inputBankAccount.nextLine();
         try {
             for (Map.Entry<String, Object> entry : ClientCreator.clients().entrySet()) {
@@ -31,6 +32,8 @@ public class Main {
                                         + "Şirket:\t" + corporateClient.getCompany()
                         );
                         clientType = "corporate";
+                        count--;
+                        break;
                     } else if (entry.getValue().getClass() == individualClient.getClass()) {
                         individualClient = (IndividualClient) entry.getValue();
                         System.out.println("İsim Soyisim:\t" + individualClient.getNameAndSurname() + "\n"
@@ -40,8 +43,14 @@ public class Main {
                                         + "Ev Adresi:\t" + individualClient.getHomeAddress()
                         );
                         clientType = "individual";
+                        count--;
+                        break;
                     }
                 }
+            }
+            if (count==ClientCreator.clients().size()){
+                System.out.println("Geçersiz Müşteri Numarası, Ana menüye yönlendiriliyorsunuz");
+                main(args);
             }
         } catch (Exception e) {
             System.out.println("Müşteri Bilgilerine Ulaşılamadı\t" + e.getMessage());
