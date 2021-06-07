@@ -41,9 +41,6 @@ public class Main {
                         );
                         clientType = "individual";
                     }
-                } else {
-                    System.out.println("Geçersiz Müşteri Numarası, Ana Ekrana Yönlendiriliyorsunuz");
-                    main(args);
                 }
             }
         } catch (Exception e) {
